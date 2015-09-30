@@ -8,49 +8,114 @@ PImage chips;
 PImage coke;
 PImage sup;
 
-void setup(){
+void setup()
+{
 
-size(2000,2000);
-background(500,500,500);
-frameRate( 30 );
+	size(2000,2000);
+	frameRate( 30 );
 
-stroke(255,255,255); // chips
-fill(0,0,255);
-rect(50,400,200,50);
 
-fill(255,255,255);
-textSize(30);
-text("$10.00",100,435);
+	chips = loadImage("images/chips.jpg");
 
-stroke(255,255,255); // coke
-fill(255,0,0);
-rect(300,400,200,50);
+	coke = loadImage ("images/coke.png");
 
-fill(255,255,255);
-textSize(30);
-text("$10.00",350,435);
-
-stroke(255,255,255); // 7up
-fill(0,255,0);
-rect(550,400,200,50);
-
-fill(255,255,255);
-textSize(30);
-text("$10.00",600,435);
-
-chips = loadImage("images/chips.jpg");
-
-coke = loadImage ("images/coke.png");
-
-sup = loadImage ("images/sup.jpg");
+	sup = loadImage ("images/sup.jpg");
 }
 
 void draw()
 {
+	background(500,500,500);
+	fill(255,0,0);
+	text(mouseX,10,10);
+	text(mouseY,10,20);
 
-image(chips,0,0,300,350);
-image(coke,250,0,300,350);
-image(sup,500,0,300,350);
+	image(chips,0,0,300,350);
+	image(coke,250,0,300,350);
+	image(sup,500,0,300,350);
+	
+	// chips
+	
+	stroke(255,255,255); 
+	fill(0,0,255);
+	rect(50,400,200,50);
+
+	fill(255,255,255);
+	textSize(30);
+	text("$10.00",100,435);
+	
+	if (mousePressed == true && mouseButton ==LEFT)
+	{
+		if (mouseX>=50 && mouseX<=250 && mouseY>=400 && mouseY<=450)
+		{
+			fill(245,23,220);
+			rect(50,400,200,50);
+			fill(255,255,255);
+			textSize(30);
+			text("$10.00",100,435);
+		}
+	}
+	
+	if (mousePressed == true && mouseButton == RIGHT)
+	{
+		link("http://www.fritolay.com/snacks/product-page/ruffles");
+	}
+	
+// coke
+
+	stroke(255,255,255); 
+	fill(255,0,0);
+	rect(300,400,200,50);
+
+	fill(255,255,255);
+	textSize(30);
+	text("$10.00",350,435);
+	
+	
+	if (mousePressed == true && mouseButton ==LEFT)
+	{
+		if (mouseX>=300 && mouseX<=500 && mouseY>=400 && mouseY<=450)
+		{
+			fill(245,23,220);
+			rect(300,400,200,50);
+			fill(255,255,255);
+			textSize(30);
+			text("$10.00",350,435);
+		}
+	}
+	if (mousePressed == true && mouseButton ==RIGHT)
+	{
+		link("http://www.coca-cola.com/global/glp.html");
+	}
+			if (mouseX>=550 && mouseX<=750 && mouseY>=400 && mouseY<=450)
+				{
+					fill(245,23,220);
+					rect(550,400,200,50);
+					fill(255,255,255);
+					textSize(30);
+					text("$10.00",600,435);
+				}
+
+
+// 7up
+
+	stroke(255,255,255); 
+	fill(0,255,0);
+	rect(550,400,200,50);
+
+	fill(255,255,255);
+	textSize(30);
+	text("$10.00",600,435);
+	if (mousePressed == true && mouseButton ==LEFT)
+	{
+		if (mouseX>=550 && mouseX<=750 && mouseY>=400 && mouseY<=450)
+			{
+				fill(245,23,220);
+				rect(550,400,200,50);
+				fill(255,255,255);
+				textSize(30);
+				text("$10.00",600,435);
+			}
+	}
 }
 
 </script>
